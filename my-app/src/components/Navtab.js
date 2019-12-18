@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import React from "react";
 // import { Link } from 'react-router';
 import App from "../App";
+=======
+import React, {Component} from "react";
+>>>>>>> 48a1e7fbd93e61108e22bf9bf2a06b8308d9ba21
 
 const styles = {
   card: {
