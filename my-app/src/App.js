@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       city:"",
     };
-    // this.getWeather();
+
     this.getForecast();
     this.weathericon = {
       // Thunderstorm: "wi-thunderstorm",
@@ -29,7 +29,7 @@ class App extends React.Component {
     }
 
   }
-
+// Temperature conversion
   calCelsius(temp){
     let cell = Math.floor(temp-239.71);
     return cell;
@@ -46,6 +46,7 @@ class App extends React.Component {
   //   }
   // }
 
+// API CALL - Single Day
   getWeather = async() => {
     const api_call = await fetch("https://api.openweathermap.org/data/2.5/weather?zip=20001,us&appid=5735b3e048f694014a7f656569a5b4d4")
     const response = await api_call.json();
@@ -65,13 +66,33 @@ class App extends React.Component {
     
   }
 
+  // API Call for Forecast
   getForecast = async() => {
 
     const forecast_api = await fetch("https://api.openweathermap.org/data/2.5/forecast?zip=20001&appid=5735b3e048f694014a7f656569a5b4d4")
     const response = await forecast_api.json();
 
     console.log(response)
-    console.log(response.list[1].main.temp)
+   
+    // PSUEDO CODE HERE loop through the array
+    // display corresponding Weather DATA
+    // for the weather parameters ran out of time 
+    
+    // Iterate through OpenWeatherData Array 
+    // const results = response.daily.data;
+    // for (const i = 0; i < 5; i++) {
+    //   const forecast = dailyWeather[i];
+    //   forecast.append( "" + Math.round(result[i].temp_celsius) + 
+    //   (response.list[i].main.temp) +
+    //   (response.list[i].main.temp_max) + 
+    //   (response.list[i].main.temp_min) + 
+    //   (response.list[i].main.temp) + 
+    //   (response.list[i].weather[i].description)
+
+    //   )
+    // }
+
+
     this.setState({
       city: (response.city.name),
       icon:undefined,
@@ -84,7 +105,7 @@ class App extends React.Component {
 
     })
   }
- 
+//  Items to be rendered
   render() {
     return (
       <div className="App">
