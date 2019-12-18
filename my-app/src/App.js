@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Current from "./pages/Current";
 import "weather-icons/css/weather-icons.css";
-// import Form from "./components/Form";
 import Forecast from "./pages/Forecast";
 import Navtab from "./components/Navtab";
 
@@ -35,6 +34,7 @@ class App extends React.Component {
     return cell;
   }
 
+  //  Create Association with icon id & Weather Icon HERE
   // getWeatherIcon(icons, rangeId){
   //   switch(true){
   //     case rangeId >= 200 && rangeId <= 232:
@@ -46,7 +46,7 @@ class App extends React.Component {
   //   }
   // }
 
-// API CALL - Single Day
+// API CALL - CURRENT WEATHER 
   getWeather = async() => {
     const api_call = await fetch("https://api.openweathermap.org/data/2.5/weather?zip=20001,us&appid=5735b3e048f694014a7f656569a5b4d4")
     const response = await api_call.json();
@@ -66,7 +66,7 @@ class App extends React.Component {
     
   }
 
-  // API Call for Forecast
+  // API Call Forecast
   getForecast = async() => {
 
     const forecast_api = await fetch("https://api.openweathermap.org/data/2.5/forecast?zip=20001&appid=5735b3e048f694014a7f656569a5b4d4")
