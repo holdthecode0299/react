@@ -1,25 +1,7 @@
-<<<<<<< HEAD
 import React from "react";
 // import { Link } from 'react-router';
 import App from "../App";
-=======
-import React, {Component} from "react";
->>>>>>> 48a1e7fbd93e61108e22bf9bf2a06b8308d9ba21
 
-const styles = {
-  card: {
-    margin: 20,
-    background: "#e8eaf6"
-  },
-  heading: {
-    background: "#9a74db",
-    minHeight: 50,
-    lineHeight: 3.5,
-    fontSize: "1.2rem",
-    color: "white",
-    padding: "0 20px"
-  }
-};
 
 class Navtab extends React.Component {
   render() {
@@ -32,17 +14,26 @@ class Navtab extends React.Component {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
             <a className="nav-link">
+              {/* I would use the Link component to create the pages */}
+              {/* Declare pages in index.html file */}
             {/* <Link to="/current">Current Weather</Link> */}
+            <a className="nav-link" href="#">
+                Current Weather <span className="sr-only"></span>
+              </a>
                <span className="sr-only"></span>
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link">
             {/* <Link to="/forecast">5-Day Forecast</Link> */}
+            <a className="nav-link" href="#">
+                5-Day Forecast<span className="sr-only"></span>
+              </a>
             </a>
           </li>
         </ul>
-        {/* <form className="form-inline my-2 my-lg-0">
+        {/* search cities weather */}
+        <form className="form-inline my-2 my-lg-0">
           <input
             className="form-control mr-sm-2"
             type="search"
@@ -52,7 +43,7 @@ class Navtab extends React.Component {
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search
           </button>
-        </form> */}
+        </form>
       </div>
     </nav>
     )
