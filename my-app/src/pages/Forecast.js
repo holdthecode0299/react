@@ -14,8 +14,8 @@ class Forecast extends React.Component  {
 //         // .then(data => console.log("Data List Loaded", data.list))
 //     } 
 
-    componentWillMount(){
-        fetch("https://api.openweathermap.org/data/2.5/weather?zip=20001,us&appid=5735b3e048f694014a7f656569a5b4d4")
+    componentDidMount(){
+        fetch("https://api.openweathermap.org/data/2.5/weather?zip=19124,us&appid=5735b3e048f694014a7f656569a5b4d4")
         .then(response => response.json())
         .then(response => {
             console.log(response)
